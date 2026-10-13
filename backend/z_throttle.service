@@ -1,0 +1,14 @@
+[Unit]
+Description=Z-Throttle Memory Compression Governor
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/z-throttle/z_throttle.py
+Restart=on-failure
+RestartSec=5
+User=root
+Nice=-5
+
+[Install]
+WantedBy=multi-user.target
